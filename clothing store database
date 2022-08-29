@@ -1,0 +1,22 @@
+CREATE TABLE clothing_store (id integer primary key, item TEXT, quantitiy INTEGER, size TEXT, price INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "tshirt", 3, "small", 20.00);
+INSERT INTO clothing_store VALUES (2, "tshirt", 4, "medium", 20.00);
+INSERT INTO clothing_store VALUES (3, "thisrt", 4, "large",20.00);
+INSERT INTO clothing_store VALUES (4, "jeans", 5, "Small", 50.00);
+INSERT INTO clothing_store VALUES (5, "jeans", 3, "medium", 50.00);
+INSERT INTO clothing_store VALUES (6, "jeans", 4, "larger", 50.00);
+INSERT INTO clothing_store VALUES (7, "dress", 5, "small", 40.00);
+INSERT INTO clothing_store VALUES (8, "dress", 4, "medium",40.00);
+INSERT INTO clothing_store VALUES (9, "dress", 4, "large", 40.00);
+INSERT INTO clothing_store VALUES (10, "shorts", 6, "small", 25.00);
+INSERT INTO clothing_store VALUES (11, "shorts", 5, "medium", 25.00);
+INsERT INTO clothing_store VALUES (12, "shorts", 6, "larger", 25.00);
+INSERT INTO clothing_store VALUES (13, "PJ's", 3, "small", 18.00);
+INSERT INTO clothing_store VALUES (14, "PJ's", 4, "medium", 18.00);
+INSERT INTO clothing_store VALUES (15, "PJ's", 3, "large", 18.00);
+SELECT * FROM clothing_store;
+SELECT * FROM clothing_store ORDER BY price DESC;
+SELECT SUM (quantitiy) from clothing_store;
+SELECT AVG(price) "avg item price"
+FROM clothing_store;
