@@ -1,0 +1,41 @@
+CREATE TABLE Ambers_Cookie_logs (ID INTEGER PRIMARY KEY, Status TEXT, Age INTEGER, cookies_eaten INTEGER, reason TEXT);
+INSERT INTO Ambers_Cookie_logs VALUES (1,"Toddler",2,4,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (2, "Toddler",2,2, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (3,"Toddler",4,3, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (4, "Toddler",4,0,"Allergies");
+INSERT into Ambers_Cookie_logs VALUES (5, "Child", 7,5,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (6, "Child",7,2,"diet");
+INSERT into Ambers_Cookie_logs VALUES (7, "Child",8,15,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (8, "Child",8,0, "Allergies");
+INSERT into Ambers_Cookie_logs VALUES (9, "Teen",14,25,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (10, "Teen",14,30,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (11,"Teen", 16,2, "diet");
+INSERT into Ambers_Cookie_logs VALUES (12,"Teen", 17,40,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (13, "Teen",17,3,"diet");
+INSERT into Ambers_Cookie_logs VALUES (14, "Young Adult",22,0,"Allergies");
+INSERT into Ambers_Cookie_logs VALUES (15, "Young Adult", 24,40,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (16, "Young Adult",26,25, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (17, "Mature Adult",34,50, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (18, "Matue Adult",34,4,"diet");
+INSERT into Ambers_Cookie_logs VALUES (19, "Mature Adult", 38,55, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (20, "Mature Adult", 38,45, "no diet");
+INSERT into Ambers_Cookie_logs VALUES (21, "Mid-age Adult", 43,2,"diet");
+INSERT into Ambers_Cookie_logs VALUES (22, "Mid-age Adult", 44,0,"Allergies");
+INSERT into Ambers_Cookie_logs VALUES (23,"Mid-age Adult", 44,50,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (24,"Mid-age Adult", 46,40,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (25,"Mid-age Adult", 48,4,"diet");
+INSERT into Ambers_Cookie_logs VALUES (26,"Older Adult", 70, 50,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (27,"Older Adult", 70, 60,"no diet");
+INSERT into Ambers_Cookie_logs VALUES (28,"Older Adult", 73, 45,"no diet");
+
+SELECT * FROM Ambers_Cookie_logs;
+SELECT AVG(age) from Ambers_cookie_logs;
+Select MAX (cookies_eaten) from Ambers_cookie_logs;
+Select Min (cookies_eaten) from Ambers_cookie_logs;
+
+Select * from Ambers_Cookie_logs WHERE age >30 AND reason = "Allergies";
+Select * from Ambers_Cookie_logs WHERE age >30 or cookies_eaten >45;
+
+Select status from Ambers_Cookie_logs group by status HAVING Count(*) >=5;
+
+SELECT status, cookies_eaten, CASE WHEN cookies_eaten >40 THEN "Above Target" WHEN cookies_eaten >20 THEN "Within Target" ELSE "Below Target" END as "Target_Cookies_Eaten" FROM Ambers_Cookie_logs GROUP BY Target_Cookies_Eaten;
